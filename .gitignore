@@ -19,3 +19,4 @@ bin-release/
 .venv
 venv/
 db.sqlite3
+migrations

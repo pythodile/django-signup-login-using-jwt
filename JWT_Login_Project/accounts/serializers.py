@@ -16,7 +16,8 @@ class SignUpSerializer(serializers.ModelSerializer):
 
     def create(self,validated_data):
         del validated_data['confirm_password']
-        return User.objects.create(**validated_data)
+        user = User.objects.create_user(**validated_data)
+        return user
 
 
     def validate(self,value):
