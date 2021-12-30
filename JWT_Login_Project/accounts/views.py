@@ -46,7 +46,7 @@ class LoginAPI(APIView):
                 url =  'http://localhost:8000'+reverse('token_obtain_pair')
                 data = {'username':username,'password':password}
                 tokens =  requests.post(url,data=data)
-                
+
                 return Response({'Tokens':json.loads(tokens.content)},status = status.HTTP_200_OK)
             else:   
                 return Response({'Message':'Invalid username and password combination'}, status =  status.HTTP_400_BAD_REQUEST)
@@ -54,6 +54,5 @@ class LoginAPI(APIView):
         except Exception as e:
             return Response({'Message':'Something went wrong due to {}'.format(str(e))}, status = status.HTTP_400_BAD_REQUEST)
         
-      
 
 
