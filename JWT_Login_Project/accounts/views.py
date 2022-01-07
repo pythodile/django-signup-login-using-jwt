@@ -53,7 +53,7 @@ class TokenAuthenticationView(APIView):
 
 
 class TestAPI(APIView):
-    permisson_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request):
         return Response({'Message': 'This is a test API'}, status =  status.HTTP_200_OK)
