@@ -19,7 +19,6 @@ class SignUpSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         return user
 
-
     def validate(self,value):
 
         if value.get('password') != value.get('confirm_password'):

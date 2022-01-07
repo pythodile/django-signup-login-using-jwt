@@ -28,7 +28,12 @@ class SignUpAPIView(APIView):
         except Exception as e:
             return Response({'Message':'Something Failed due to {}'.format(str(e))}, status = status.HTTP_400_BAD_REQUEST)
 
-    
+
+class TestAPI(APIView):
+    permisson_classes = (IsAuthenticated,)
+
+    def get(self, request):
+        return Response({'Message': 'This is a test API'}, status =  status.HTTP_200_OK)
 
 class LoginAPI(APIView):
 
