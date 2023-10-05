@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 
 class SignUpSerializer(serializers.ModelSerializer):
-
+#changing 
     first_name = serializers.CharField(max_length = 20)
     last_name =  serializers.CharField(max_length = 20)
     email = serializers.EmailField()
